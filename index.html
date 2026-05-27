@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>[YOUR NAME] — Tech for Hire | Dark/Light Toggle</title>
+  <title>Rabin — Tech for Hire</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Syne:wght@500;800&display=swap" rel="stylesheet">
   <style>
@@ -17,7 +17,7 @@
       --accent:   #008c4d;
       --hot:      #d14545;
       --text:     #1a2c24;
-      --muted:    #5c7568;
+      --muted:    #2c4a3a;
       --font-display: 'Bebas Neue', sans-serif;
       --font-mono:    'IBM Plex Mono', monospace;
       --font-body:    'Syne', sans-serif;
@@ -25,7 +25,7 @@
       --toggle-icon: #2c3e2f;
     }
 
-    /* Dark theme (original) */
+    /* Dark theme */
     body.dark {
       --bg:       #060a08;
       --surface:  #0d1a12;
@@ -33,7 +33,7 @@
       --accent:   #00e574;
       --hot:      #ff3c3c;
       --text:     #ddeee6;
-      --muted:    #4a6657;
+      --muted:    #9bc0ac;
       --toggle-bg: #1a2a1f;
       --toggle-icon: #00e574;
     }
@@ -57,9 +57,7 @@
       pointer-events: none;
       opacity: 0.4;
     }
-    body.dark #bg-canvas {
-      opacity: 1;
-    }
+    body.dark #bg-canvas { opacity: 1; }
 
     .grid-overlay {
       position: fixed;
@@ -73,9 +71,7 @@
       z-index: 1;
       transition: opacity 0.2s;
     }
-    body.dark .grid-overlay {
-      opacity: 0.25;
-    }
+    body.dark .grid-overlay { opacity: 0.25; }
 
     .orb {
       position: fixed;
@@ -113,7 +109,7 @@
       70%       { transform: translate(10px, -15px); }
     }
 
-    /* Dark mode toggle button with visible label */
+    /* Theme toggle with visible label */
     .theme-toggle {
       position: fixed;
       top: 20px;
@@ -140,21 +136,11 @@
       border-color: var(--accent);
       background: var(--surface);
     }
-    .theme-toggle .icon {
-      font-size: 18px;
-      color: var(--toggle-icon);
-    }
-    .theme-toggle .label {
-      letter-spacing: 0.03em;
-    }
+    .theme-toggle .icon { font-size: 18px; color: var(--toggle-icon); }
+    .theme-toggle .label { letter-spacing: 0.03em; }
 
     @media (max-width: 500px) {
-      .theme-toggle {
-        top: 12px;
-        right: 12px;
-        padding: 6px 12px;
-        font-size: 11px;
-      }
+      .theme-toggle { top: 12px; right: 12px; padding: 6px 12px; font-size: 11px; }
       .theme-toggle .icon { font-size: 14px; }
     }
 
@@ -179,8 +165,8 @@
       border: 1px solid rgba(var(--accent-rgb, 0,140,77), 0.35);
       border-radius: 100px;
       padding: 5px 14px 5px 10px;
-      font-size: 10px;
-      letter-spacing: 0.15em;
+      font-size: 11px;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--accent);
       width: fit-content;
@@ -192,7 +178,6 @@
       background: rgba(0,229,116,0.08);
       border-color: rgba(0,229,116,0.25);
     }
-
     .badge::after {
       content: '';
       position: absolute;
@@ -201,12 +186,10 @@
       background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
       animation: shimmer 3.5s ease-in-out infinite;
     }
-
     @keyframes shimmer {
       0%   { left: -100%; }
       40%, 100% { left: 160%; }
     }
-
     .badge-dot {
       width: 7px; height: 7px;
       border-radius: 50%;
@@ -225,7 +208,6 @@
         fadeSlideUp 0.7s 0.1s ease both,
         pendulumSwing 5s 0.8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
     }
-
     .name-nail-wrap::before {
       content: '';
       position: absolute;
@@ -239,7 +221,6 @@
       background: radial-gradient(circle at 35% 30%, #b0c8bc, #3a5548);
       box-shadow: 0 2px 6px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.08);
     }
-
     .name-nail-wrap::after {
       content: '';
       position: absolute;
@@ -247,7 +228,6 @@
       width: 1px; height: 10px;
       background: linear-gradient(to bottom, var(--muted), transparent);
     }
-
     .name {
       font-family: var(--font-display);
       font-size: clamp(64px, 18vw, 96px);
@@ -256,7 +236,6 @@
       color: var(--text);
       display: block;
     }
-
     .name span { color: var(--accent); }
 
     @keyframes pendulumSwing {
@@ -277,22 +256,19 @@
       gap: 10px;
       animation: fadeSlideUp 0.7s 0.2s ease both;
     }
-
     .title-line {
       flex: 1; height: 1px;
       background: linear-gradient(90deg, transparent, var(--border), transparent);
     }
-
     .title {
-      font-size: 10px;
-      letter-spacing: 0.18em;
+      font-size: 11px;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--muted);
       white-space: nowrap;
     }
 
     .tagline { animation: fadeSlideUp 0.7s 0.3s ease both; }
-
     .tagline p {
       font-family: var(--font-body);
       font-size: 18px;
@@ -301,13 +277,11 @@
       color: var(--text);
       min-height: 3.2em;
     }
-
     .tagline p em {
       font-style: normal;
       color: var(--accent);
       font-weight: 800;
     }
-
     .cursor {
       display: inline-block;
       width: 2px; height: 1.1em;
@@ -317,19 +291,24 @@
       animation: blink 1s step-end infinite;
     }
 
+    /* Section label */
     .section-label {
-      font-size: 9px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 14px;
+      font-family: var(--font-body);
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      text-transform: none;
+      color: var(--accent);
+      margin-bottom: 16px;
+      border-left: 3px solid var(--accent);
+      padding-left: 12px;
+      background: transparent !important;
     }
 
-    /* LID CONTAINER – semi‑transparent, downward flip (theme adaptive) */
+    /* LID CONTAINER – semi‑transparent, downward flip */
     .skills {
       animation: fadeSlideUp 0.7s 0.4s ease both;
     }
-
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -337,7 +316,6 @@
       justify-items: center;
       align-items: center;
     }
-
     .lid-container {
       position: relative;
       width: 150px;
@@ -345,14 +323,12 @@
       perspective: 1200px;
       cursor: pointer;
     }
-
     .lid-scene {
       position: relative;
       width: 100%;
       height: 100%;
       transform-style: preserve-3d;
     }
-
     .lid-photo {
       position: absolute;
       width: 100%;
@@ -378,7 +354,6 @@
       background: radial-gradient(circle at 30% 30%, rgba(0,140,77,0.2), rgba(0,140,77,0.05));
       box-shadow: 0 10px 20px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,0.6);
     }
-
     .inner-content {
       position: absolute;
       width: 100%;
@@ -407,13 +382,10 @@
       box-shadow: inset 0 0 20px rgba(0,0,0,0.5), 0 5px 15px rgba(0,0,0,0.3);
       border: 2px solid var(--border);
     }
-
     .lid-container:hover .lid-photo {
       transform: rotateX(150deg);
       filter: brightness(0.95);
       backdrop-filter: blur(1px);
-    }
-    .lid-container:hover .lid-photo {
       border-color: var(--accent);
       box-shadow: 0 0 18px rgba(var(--accent-rgb, 0,229,116), 0.4);
     }
@@ -424,7 +396,6 @@
     body.dark .lid-container:hover .inner-content {
       box-shadow: inset 0 0 20px rgba(0,0,0,0.5), 0 0 15px rgba(0,229,116,0.2);
     }
-
     .lid-photo::after {
       content: '';
       position: absolute;
@@ -440,7 +411,6 @@
     body.dark .lid-photo::after {
       background: radial-gradient(ellipse, rgba(255,255,255,0.2) 0%, transparent 70%);
     }
-
     .lid-container {
       opacity: 0;
       animation: fadeInScale 0.5s ease forwards;
@@ -460,21 +430,23 @@
       .lid-container { width: 110px; height: 110px; }
       .inner-content { font-size: 10px; padding: 8px; }
       .lid-photo { border-width: 3px; }
+      .section-label { font-size: 13px; padding-left: 10px; }
     }
 
-    /* BLURB */
+    /* BLURB – improved readability */
     .blurb {
       background: var(--surface);
       border: 1px solid var(--border);
       border-left: 3px solid var(--accent);
       border-radius: 0 8px 8px 0;
       padding: 18px 20px;
-      font-size: 12.5px;
+      font-size: 13px;
       line-height: 1.75;
-      color: var(--muted);
+      color: var(--text);
       animation: fadeSlideUp 0.7s 0.5s ease both;
+      font-weight: 400;
     }
-    .blurb strong { color: var(--text); font-weight: 500; }
+    .blurb strong { color: var(--accent); font-weight: 600; }
 
     /* ASK */
     .ask { animation: fadeSlideUp 0.7s 0.55s ease both; }
@@ -527,9 +499,30 @@
     }
     .ask-headline span { color: var(--accent); }
     .ask-sub {
-      font-size: 11.5px;
+      font-size: 13px;
       color: var(--muted);
       line-height: 1.7;
+    }
+
+    /* Animated pointing finger / arrow */
+    .pointing-finger {
+      margin-top: 20px;
+      font-size: 32px;
+      animation: bounceSoft 1.2s ease-in-out infinite;
+      display: inline-block;
+      cursor: pointer;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+    }
+    @keyframes bounceSoft {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+    /* Ensure finger adapts to theme */
+    body:not(.dark) .pointing-finger {
+      color: #008c4d;
+    }
+    body.dark .pointing-finger {
+      color: #00e574;
     }
 
     /* CTA */
@@ -577,17 +570,19 @@
       50% { box-shadow: 0 0 20px rgba(0,229,116,0.55), 0 0 50px rgba(0,229,116,0.2); }
     }
     .cta-btn:hover { transform: translateY(-3px); filter: brightness(1.05); }
-    .cta-note { text-align: center; font-size: 10px; color: var(--muted); letter-spacing: 0.06em; }
+    .cta-note { text-align: center; font-size: 11px; color: var(--muted); letter-spacing: 0.06em; }
 
+    /* FOOTER – clearly visible */
     footer {
       text-align: center;
-      font-size: 10px;
-      color: var(--border);
-      letter-spacing: 0.1em;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       animation: fadeSlideUp 0.7s 0.75s ease both;
       padding-top: 10px;
       border-top: 1px solid var(--border);
+      font-weight: 500;
     }
 
     @keyframes fadeSlideDown { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: translateY(0); } }
@@ -612,15 +607,15 @@
   <div class="page">
     <header class="header">
       <div class="badge"><span class="badge-dot"></span>Open to opportunities</div>
-      <div class="name-nail-wrap"><h1 class="name">[YOUR<br><span>NAME]</span></h1></div>
-      <div class="title-row"><div class="title-line"></div><span class="title">// [Your Title Here]</span><div class="title-line"></div></div>
+      <div class="name-nail-wrap"><h1 class="name">RABIN<br><span>OTIENO</span></h1></div>
+      <div class="title-row"><div class="title-line"></div><span class="title">Techie</span><div class="title-line"></div></div>
     </header>
 
     <div class="tagline"><p id="tagline-text"><span class="cursor"></span></p></div>
 
     <!-- SKILLS SECTION – DOWNWARD FLIP LIDS -->
     <div class="skills" id="skills-section">
-      <div class="section-label">// what I do</div>
+      <div class="section-label">SKILLS</div>
       <div class="skills-grid">
         <div class="lid-container"><div class="lid-scene"><div class="lid-photo"></div><div class="inner-content">IoT &amp; Embedded Systems</div></div></div>
         <div class="lid-container"><div class="lid-scene"><div class="lid-photo"></div><div class="inner-content">Software Development</div></div></div>
@@ -631,13 +626,20 @@
       </div>
     </div>
 
-    <div class="blurb"><strong>[Short bio placeholder]</strong> — e.g. "3 years building end-to-end tech solutions, from hardware to UI. I move fast, learn faster, and ship clean work."</div>
+    <div class="blurb"><strong>About me</strong> — "I have an educational background in Microprocessor Technology & Instrumentation. In terms of hands-on experience, I've worked in various IT roles cutting across both software and hardware."</div>
 
-    <div class="ask"><div class="section-label">// the ask</div><div class="ask-box"><div class="ask-headline">Got a <span>vacancy?</span></div><p class="ask-sub">I'm actively looking for my next role — full-time, contract, or freelance.<br>If you've got a gap I can fill, let's talk.</p></div></div>
+    <!-- ASK with animated finger/arrow -->
+    <div class="ask">
+      <div class="ask-box">
+        <div class="ask-headline">Got a <span>vacancy?</span></div>
+        <p class="ask-sub">I'm actively looking for my next role — full-time, contract, or freelance.<br>If you've got a gap I can fill, please let me know through the email below..</p>
+        <div class="pointing-finger">👇</div>
+      </div>
+    </div>
 
-    <div class="cta"><a class="cta-btn" href="mailto:your@email.com">✉&nbsp; your@email.com</a><p class="cta-note">tap to send me a message — I respond fast</p></div>
+    <div class="cta"><a class="cta-btn" href="mailto:otiinibar@gmail.com">✉&nbsp; otiinibar@gmail.com</a><p class="cta-note">tap to send me a message — I respond fast</p></div>
 
-    <footer>[YOUR NAME] &nbsp;·&nbsp; [City, Country] &nbsp;·&nbsp; [Year]</footer>
+    <footer>Rabin Otieno &nbsp;·&nbsp; [Kisumu, Kenya] &nbsp;·&nbsp; 2026</footer>
   </div>
 
   <script>
